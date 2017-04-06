@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+	integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+	crossorigin="anonymous">
+
+<script type="text/javascript"
+	src="http://code.jquery.com/jquery-latest.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+	crossorigin="anonymous"></script>
+
+<!-- Latest compiled and minified JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+	crossorigin="anonymous"></script>
+
+<script type="text/javascript"
+	src="http://code.jquery.com/jquery-latest.js"></script>
+<meta charset="UTF-8">
+
+<title>WatchMovies.com</title>
+<style type="text/css">
+#result {
+	border: 1px white solid;
+	display: inline-block;
+}
+
+#results {
+	background-color: black;
+}
+</style>
+</head>
+
+<body>
+
+	<nav style="margin-bottom:0;" class="navbar navbar-default">
+		<div width="100%" class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+					aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">LOGO</a>
+			</div>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li><button type="submit" id="submitttrailer"
+							class="btn btn-default">Latest Telugu Trailets</button></li>
+					<li><button type="submit" id="submithtrailer"
+							class="btn btn-default">Latest Hindi Trailets</button></li>
+					<select class="form-control" id="filter">
+						<option value="Relevance">Relevance</option>
+						<option value="Upload date">Upload date</option>
+						<option value="View count">View count</option>
+						<option value="Rating">Rating</option>
+					</select>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<form class="navbar-form navbar-left">
+						<div id="form" class="form-group">
+							<input type="text" id="search" class="form-control"
+								placeholder="Youtube Search">
+						</div>
+						<button type="submit" id="submit" class="btn btn-default">Search</button>
+					</form>
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container-fluid -->
+	</nav>
+	
+	<div align="center" id="results"></div>
+	<script src="movie.js"></script>
+
+	<script src="https://apis.google.com/js/client.js?onload=init"></script>
+</body>
+
+</html>
