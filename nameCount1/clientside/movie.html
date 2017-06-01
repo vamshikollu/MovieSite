@@ -3,10 +3,11 @@
 
 <head>
 <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet"
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<!--  <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
 	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-	crossorigin="anonymous">
+	crossorigin="anonymous">-->
 
 <!-- Optional theme -->
 <link rel="stylesheet"
@@ -17,83 +18,120 @@
 <script type="text/javascript"
 	src="http://code.jquery.com/jquery-latest.js"></script>
 <!-- Latest compiled and minified JavaScript -->
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-	crossorigin="anonymous"></script>
 
-<!-- Latest compiled and minified JavaScript -->
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-	crossorigin="anonymous"></script>
-
-<script type="text/javascript"
-	src="http://code.jquery.com/jquery-latest.js"></script>
-<meta charset="UTF-8">
-
-<title>WatchMovies.com</title>
+<link rel="shortcut icon" href="../images/logo.png" type="image/png"
+	height="48px" width="64px" />
+<title>Jumbare</title>
 <style type="text/css">
+#nav {
+	
+}
+
+#navdata {
+	margin-left: 100px;
+	margin-right: 100px;
+	
+}
+
+#logo-room {
+	padding-right: 20px;
+}
+
+#logo {
+	background-image: url(/logo.png);
+	background-position: 50% 25%;
+	background-size: cover;
+	height: 64px;
+	width: 110px;
+}
+
+#navmiddle {
+	font-weight: 500;
+	font-size: 15px;
+	color: #333;
+	display: inline-block;
+	position: auto;
+	margin: 10px;
+	height: inherit;
+	font-size: 17px;
+}
+
+#mainn {
+	background-color: rgb(255, 255, 200);
+}
+
 #result {
 	border: 1px white solid;
 	display: inline-block;
 }
 
 #results {
+	margin-left: 100px;
+	margin-right: 100px;
 	background-color: black;
 }
 </style>
 </head>
 
 <body>
+	<nav class="navbar navbar-inverse">
+		<div id="navdata" class="container-fluid">
+			<div id="logo-room" class="navbar-header">
+				<a class="navbar-brand"
+					title="Watch Your Favourite Telugu Movies Online"
+					href="http://localhost:3000/" id="logo"></a>
+			</div>
+			<ul id="navmiddle" class="nav navbar-nav">
+				<li><a style="color: #0397D6;" title="Home"
+					href="http://localhost:3000/">HOME</a></li>
+					<li><a type="submit" id="submitmovies" href="">MOVIES</a></li>
+				<li><a type="submit" id="submitttrailer" href="">TRAILERS</a></li>
+				<li><a type="submit" id="submitsongs" href="">SONGS</a></li>
+				<li><a type="submit" id="submitcomedy" href="">SHORT FILMS</a></li>
+				<select style="width:inherit" class="form-control" id="filter">
+					<option id="Relevance" value="Relevance">Relevance</option>
+					<option id="UploadDate" value="UploadDate">Upload date</option>
+					<option id="ViewCount" value="ViewCount">View count</option>
+					<option id="Rating" value="Rating">Rating</option>
+				</select>
 
-	<nav style="margin-bottom:0;" class="navbar navbar-default">
-		<div width="100%" class="container-fluid">
-			<!-- Brand and toggle get grouped for better mobile display -->
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed"
-					data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
-					aria-expanded="false">
-					<span class="sr-only">Toggle navigation</span> <span
-						class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#">LOGO</a>
-			</div>
-			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="collapse navbar-collapse"
-				id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav">
-					<li><button type="submit" id="submitttrailer"
-							class="btn btn-default">Latest Telugu Trailets</button></li>
-					<li><button type="submit" id="submithtrailer"
-							class="btn btn-default">Latest Hindi Trailets</button></li>
-					<select class="form-control" id="filter">
-						<option value="Relevance">Relevance</option>
-						<option value="Upload date">Upload date</option>
-						<option value="View count">View count</option>
-						<option value="Rating">Rating</option>
-					</select>
-				</ul>
-				<ul class="nav navbar-nav navbar-right">
-					<form class="navbar-form navbar-left">
-						<div id="form" class="form-group">
-							<input type="text" id="search" class="form-control"
-								placeholder="Youtube Search">
-						</div>
-						<button type="submit" id="submit" class="btn btn-default">Search</button>
-					</form>
-				</ul>
-			</div>
-			<!-- /.navbar-collapse -->
+
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+			<form class="navbar-form">
+  <div id="form" class="input-group">
+    <input id="search" type="text" class="form-control" placeholder="Search">
+    <div class="input-group-btn">
+      <button id="submit" class="btn btn-default" type="submit">
+        <i class="glyphicon glyphicon-search"></i>
+      </button>
+    </div>
+  </div>
+</form>
+<!--  
+				<form class="navbar-form">
+				
+					<div id="form" class="form-group">
+						<input type="text" id="search" class="form-control"
+							placeholder="Youtube Search">
+					</div>
+					<button type="submit" id="submit" class="btn btn-default">Search</button>
+				</form>
+				-->
+			</ul>
 		</div>
-		<!-- /.container-fluid -->
 	</nav>
 	
-	<div align="center" id="results"></div>
-	<script src="movie.js"></script>
 
-	<script src="https://apis.google.com/js/client.js?onload=init"></script>
+	<div id="mainn">
+	
+
+		<div align="center" id="results"> </div>
+		<script src="movie.js"></script>
+
+		<script src="https://apis.google.com/js/client.js?onload=init"></script>
+	
+	</div>
 </body>
 
 </html>
